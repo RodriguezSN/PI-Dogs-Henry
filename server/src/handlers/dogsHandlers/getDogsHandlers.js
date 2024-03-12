@@ -2,11 +2,10 @@ const getDogsController = require("../../controllers/dogsControllers/getDogsCont
 
 const getDogsHandlers = async (req,res)=>{
     try {
-        const {id} = req.body;
-        const response = await getDogsController(id)
-        console.log(response) 
+        const response = await getDogsController()
+        res.status(200).json(response) 
     } catch (error) {
-        console.log(error.message)
+        res.status(400).send("Error al obtener datos de los perros", error.message)
     }
 }
 

@@ -15,6 +15,3 @@ router.use("/temperaments", temperamentsRouter)
 module.exports = router;
 
 
-
-//https://api.thedogapi.com/v1/breeds?api_key=live_IqZNiKr6BFgfNpLlwKvo62W1jZe7Z47IwD6AvNE5OB7DepR75jCrrleM0bWcK9KA
-
