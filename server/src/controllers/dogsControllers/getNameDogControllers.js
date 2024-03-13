@@ -2,11 +2,10 @@ const axios = require("axios")
 require("dotenv").config()
 const {API_KEY} = process.env
 const {Sequelize, Op} = require("sequelize")
-const {Dog, Temperament} = require("../../db")
+const {Dog, Temperaments} = require("../../db")
 
 
 const getNameDogController = async (name) =>{
-console.log(name)
     const {data: dataApi = []} = await axios.get(`https://api.thedogapi.com/v1/breeds/search?q=${name}`,{
         headers:{
             "x-api-key": API_KEY
@@ -45,7 +44,7 @@ console.log(name)
                 }
             },
             include:[{
-                model:Temperament,
+                model:Temperaments,
                 attributes:["name"],
                 through:{attributes:[]}
             }]

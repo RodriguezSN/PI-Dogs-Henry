@@ -11,6 +11,6 @@ dogsRouter.get("/:idRaza", getIdDogHandlers)
 
 dogsRouter.get("/name", getNameDogHandlers)
 
-dogsRouter.post("/dogs", postDogsHandlers)
+dogsRouter.post("/", postDogsHandlers)
 
 module.exports = dogsRouter

@@ -3,7 +3,7 @@ const getNameDogController = require("../../controllers/dogsControllers/getNameD
 
 const getNameDogHandlers = async (req,res) =>{
     try {
-        const { name } = req.query
+        const name  = req.query.name
         const response = await getNameDogController(name)
         res.status(200).json(response)
     } catch (error) {
