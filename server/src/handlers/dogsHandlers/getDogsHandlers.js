@@ -5,11 +5,10 @@ const getDogsHandlers = async (req,res)=>{
         const response = await getDogsController()
         res.status(200).json(response) 
     } catch (error) {
-        res.status(400).send("Error al obtener datos de los perros", error.message)
+        res.status(400).json(error.message)
+        // res.status(400).send("Error al obtener datos de los perros", error.message)
     }
 }
 
 
-module.exports = {
-    getDogsHandlers
-}
+module.exports = getDogsHandlers
