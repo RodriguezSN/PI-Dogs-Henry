@@ -43,9 +43,9 @@ export const getDogById = (origen, id) => {
             const perroFinal = null
 
             if(origen === "api"){
-                perroFinal = data.apiResult
+                perroFinal = data?.apiResult
             }else if(origen === "db"){
-                perroFinal = data.dbResult
+                perroFinal = data?.dbResult
             }
     
     return dispatch({

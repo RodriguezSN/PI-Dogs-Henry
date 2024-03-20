@@ -8,7 +8,7 @@ export default function Card ({id, imagen, nombre, temperamentos, peso, origen})
         <div className="cardContenedor">
             <div className="cardImg">
                 <Link to={`/detail/${origen}/${id}`}>
-                <img src={imagen ? imagen : ""} alt="" width={"100px"} />
+                <img src={imagen.url ? imagen.url : "" || imagen ? imagen : ""} alt="" width={"100px"} />
                 </Link>
             </div>
             <h3>{nombre}</h3>

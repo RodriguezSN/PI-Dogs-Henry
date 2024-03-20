@@ -44,7 +44,7 @@ export default function Cards({setPage, page}){
     }
 
     const goTolastPage = () => {
-        const totalPages = match.ceil(allDogs.length / dogsPerPage)
+        const totalPages = Math.ceil(allDogs.length / dogsPerPage)
         setPage(totalPages)
     }
 

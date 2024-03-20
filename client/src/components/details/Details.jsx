@@ -11,7 +11,7 @@ export default function Details () {
     const dispatch = useDispatch()
 
     useEffect(()=>{
-        dispatch(getDogById(origin, id))
+        dispatch(getDogById(origen, id))
 
         return ()=>{
             dispatch(cleanDetail())
@@ -30,7 +30,7 @@ export default function Details () {
 
             <div className="detailsContenedorTexto">
                 <h1>{perroFinal?.nombre}</h1>
-                <div className="detailsDetails">
+                <div className="DetailsDetails">
                     //? Altura
                     <div className="ditailsDitailsAltura">
                         <img src="/altura.png" alt="icono de altura" width={"30px"} title="Altura" />
@@ -39,7 +39,7 @@ export default function Details () {
                     //? Peso
                     <div className="detailsDitailsPeso">
                         <img src="/peso.png" alt="icono de peso" width={"30px"} title="Peso" />
-                        <span>{peroFinal?.peso} Kg</span>
+                        <span>{perroFinal?.peso} Kg</span>
                     </div>
                     //? Edad
                     <div className="detailsDetailsAñosDeVida">
