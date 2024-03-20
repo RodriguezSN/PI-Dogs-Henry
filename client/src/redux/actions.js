@@ -1,6 +1,7 @@
 import { CLEAN_DETAIL, FILTER_ORIGIN, FILTER_TEMPERAMENT, GET_ALL_DOGS, GET_ALL_TEMPERAMENTS, GET_DOG_BY_ID, GET_DOG_BY_NAME, ORDER_DOG } from "./actions-types"
 import axios from "axios"
 
+
 export const getAllDogs = () => {
     return async (dispatch)=>{
         try {
@@ -40,7 +41,7 @@ export const getDogById = (origen, id) => {
         try {
             const {data} = await axios.get(`http://localhost:3001/dogs/${id}`)
 
-            const perroFinal = null
+            let perroFinal = null
 
             if(origen === "api"){
                 perroFinal = data?.apiResult

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { filterOrigin, filterTemperament, getAllTemperaments, getDogByName, orderDogs } from "../../redux/actions";
 import { Link } from "react-router-dom";
+import "./NavBar.css"
 
 
 
@@ -9,11 +10,11 @@ export default function NavBar ({setPage}){
 
     const dispatch = useDispatch()
     const [name, setName] = useState("")
-
+     
     useEffect(()=>{
         const fetchData = async ()=>{
             try {
-                dispatch(getAllTemperaments)
+                dispatch(getAllTemperaments())
             } catch (error) {
                 console.error("Error al cargar los temperamentos: ", error)
             }
@@ -50,12 +51,16 @@ export default function NavBar ({setPage}){
     return (
         <div className="navBarContenedor">
                 <div className="navBarIzquierda">
+                    <Link to={"/"} style={{width:"100%"}}>
                     <h1>PI DOGS</h1>
+                    </Link>
                     <img src="/pata.png" alt="Huella de perro" className="huella" />
                 </div>  
 
                 <div className="navBarCentro">
-
+                {
+                    //* ordenamiento
+                }
                     <div className="ordenamiento">
                         <label htmlFor="ordenamiento">Ordenamiento</label>
                         <select name="ordenamiento" id="ordenamiento" defaultValue={"default"} onChange={handlerChange}>
@@ -66,14 +71,16 @@ export default function NavBar ({setPage}){
                             <option value="masPeso">Mas peso</option>
                         </select>
                     </div>
-
+                {
+                    //* Filtros
+                }
                     <div className="filtro">
                         <label htmlFor="temperamentos">Filtros: </label>
                         <select name="temperamentos" id="temperamentos" defaultValue={"default"} onChange={handleChangeTemp}>
                             <option value="default">-</option>
                             {
                                 allTemperaments.map(temp => (
-                                    <option value={temp.nombre} key={temp.id}>{temp.nombre}</option>
+                                    <option value={temp.nombre} key={temp.id} >{temp.name}</option>
                                 ))
                             }
                         </select>

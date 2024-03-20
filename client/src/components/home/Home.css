@@ -1,0 +1,10 @@
+.homeContenedor {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .espaciado{
+    height: 70px;
+  }

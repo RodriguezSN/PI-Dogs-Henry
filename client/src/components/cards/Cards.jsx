@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Card from "../card/Card";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllDogs } from "../../redux/actions";
-
+import "./Cards.css"
 
 export default function Cards({setPage, page}){
 

@@ -1,6 +1,6 @@
 import React from "react";
 import Cards from "../cards/Cards";
-
+import "./Home.css"
 
 
 export default function Home ({setPage, page}){

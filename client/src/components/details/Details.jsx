@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { cleanDetail, getDogById } from "../../redux/actions";
-
+import "./Details.css"
 
 export default function Details () {
 
@@ -12,15 +12,19 @@ export default function Details () {
 
     useEffect(()=>{
         dispatch(getDogById(origen, id))
-
-        return ()=>{
-            dispatch(cleanDetail())
-        }
-    },[dispatch, id])
+    
+        return () =>{
+          dispatch(cleanDetail())
+          }
+      },[dispatch, id, origen])
 
     return (
         <div className="detailsContenedorGeneral">
-
+            <div className='ButtonHome'>
+                <Link to={"/home"}>
+                  <button>⬅</button>
+                </Link>
+              </div>
             <div className="detailsContenedorImg">
                 <div className="detailsContenedorimagen">
                     <img className="detailsImage" src={perroFinal?.imagen} alt="" />
@@ -31,17 +35,23 @@ export default function Details () {
             <div className="detailsContenedorTexto">
                 <h1>{perroFinal?.nombre}</h1>
                 <div className="DetailsDetails">
-                    //? Altura
+                    {
+                        //? Altura
+                    }
                     <div className="ditailsDitailsAltura">
                         <img src="/altura.png" alt="icono de altura" width={"30px"} title="Altura" />
                         <span>{perroFinal?.altura} cm</span>
                     </div>
-                    //? Peso
+                    {
+                        //? Peso
+                    }
                     <div className="detailsDitailsPeso">
                         <img src="/peso.png" alt="icono de peso" width={"30px"} title="Peso" />
                         <span>{perroFinal?.peso} Kg</span>
                     </div>
-                    //? Edad
+                    {
+                        //? Edad
+                    }
                     <div className="detailsDetailsAñosDeVida">
                         <img src="/añosDeVida.png" alt="icono de años de vida" width={"30px"} title="Años de vida" />
                     </div>

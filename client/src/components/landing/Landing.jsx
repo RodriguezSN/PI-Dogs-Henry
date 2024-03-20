@@ -1,4 +1,5 @@
 import React from "react"
+import "./Landing.css"
 import {Link} from "react-router-dom"
 
 export default function Landing (){
@@ -12,7 +13,7 @@ export default function Landing (){
                 <Link  to={"/home"}> 
                 <button className="landingButtonHome">Home</button>
                 </Link>
-            </div>
+            </div><br />
             <div className="landingBloque2">
                 <img src="/portada1.png" alt="img1" className="img1" />
                 <img src="/portada2.png" alt="img2" className="img2" />
@@ -22,4 +23,4 @@ export default function Landing (){
     )
 }
 
-//client\public\portada3.png
+

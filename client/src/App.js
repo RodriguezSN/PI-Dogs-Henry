@@ -1,54 +1,34 @@
 import './App.css';
 import React, { useState } from 'react';
-import Landing from './components/landing/Landing.jsx';
-import { Link, Route, Routes, useLocation } from 'react-router-dom';
-import NavBar from './components/navBar/NavBar.jsx';
-import Home from './components/home/Home.jsx';
+import { Route, Routes, useLocation } from 'react-router-dom';
+import NavBar from './components/navBar/NavBar';
+import Landing from './components/landing/Landing';
+import Home from './components/home/Home';
 import Details from './components/details/Details.jsx';
-import Form from './components/form/Forms.jsx';
+import Forms from './components/form/Forms.jsx';
+
 
 
 
 function App() {
 
   const {pathname} = useLocation()
-
+ 
   const [page, setPage] = useState(1)
 
   return (
     <div className="App">
 
-      {pathname === "/home" ? <NavBar setPage={setPage}></NavBar> : null}
+      {pathname === "/home" ? <NavBar setPage={setPage}/> : null}
       <Routes>
+
         <Route path="/" element={<Landing/>}/>
         
         <Route path='/home' element={<Home setPage={setPage} page={page}/>} />
 
-        <Route 
-          path='detail/:origin/:id' 
-          element={
-            <div className='Details'>
-              <div className='ButtonHome'>
-                <Link to={"/home"}>
-                  <button>⬅</button>
-                </Link>
-              </div>
-              <Details />
-            </div>
-        } />
+        <Route path='detail/:origin/:id' element={ <Details /> } />
 
-        <Route
-          path='/form'
-          element={
-            <div className='Form'>
-                <div className='ButtonHome'>
-                  <Link to={"/home"}>
-                    <button>⬅</button>
-                  </Link>
-                </div>
-                <Form />
-            </div>
-          } />
+        <Route path='/form' element={<Forms />} />
 
       </Routes>
     </div>
