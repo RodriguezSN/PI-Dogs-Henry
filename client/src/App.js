@@ -5,6 +5,7 @@ import { Link, Route, Routes, useLocation } from 'react-router-dom';
 import NavBar from './components/navBar/NavBar.jsx';
 import Home from './components/home/Home.jsx';
 import Details from './components/details/Details.jsx';
+import Form from './components/form/Forms.jsx';
 
 
 
@@ -36,7 +37,18 @@ function App() {
             </div>
         } />
 
-        
+        <Route
+          path='/form'
+          element={
+            <div className='Form'>
+                <div className='ButtonHome'>
+                  <Link to={"/home"}>
+                    <button>⬅</button>
+                  </Link>
+                </div>
+                <Form />
+            </div>
+          } />
 
       </Routes>
     </div>
